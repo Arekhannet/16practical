@@ -54,4 +54,19 @@ public class Heap {
         if (n > 0) siftDown(1);
         return min;
     }
+    // BOTTOM-UP: fill array then siftDown from n/2 down to 1  O(n)
+    public void buildBottomUp(String[] words, int len) {
+        n = len;
+        for (int i = 1; i <= n; i++)
+            d[i] = words[i - 1];
+        for (int i = n / 2; i >= 1; i--)
+            siftDown(i);
+    }
+
+    // TOP-DOWN: insert one word at a time  O(n log n)
+    public void buildTopDown(String[] words, int len) {
+        n = 0;
+        for (int i = 0; i < len; i++)
+            insert(words[i]);
+    }
 }
