@@ -1,5 +1,6 @@
-public class Heap {
+//consulted claud ai free version.
 
+public class Heap {
     String[] d;
     int n;
     int maxSize;
@@ -43,5 +44,14 @@ public class Heap {
         n++;
         d[n] = word;
         siftUp(n);
+    }// Remove and return the smallest word (root)
+    // Replace root with last element, then siftDown
+    public String deleteMin() {
+        if (n == 0) return null;
+        String min = d[1];
+        d[1] = d[n];
+        n--;
+        if (n > 0) siftDown(1);
+        return min;
     }
 }
