@@ -69,4 +69,12 @@ public class Heap {
         for (int i = 0; i < len; i++)
             insert(words[i]);
     }
+    // Extract all elements in sorted order using deleteMin
+    public String[] heapSort() {
+        String[] sorted = new String[n];
+        int size = n;
+        for (int i = 0; i < size; i++)
+            sorted[i] = deleteMin();
+        return sorted;
+    }
 }
