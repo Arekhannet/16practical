@@ -37,4 +37,11 @@ public class Heap {
         }
         d[i] = temp;
     }
+    // Add a new word to the heap, then siftUp to fix order
+    public void insert(String word) {
+        if (n >= maxSize) throw new RuntimeException("Heap is full");
+        n++;
+        d[n] = word;
+        siftUp(n);
+    }
 }
